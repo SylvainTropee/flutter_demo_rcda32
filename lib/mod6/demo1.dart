@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(PasswordInput());
+  runApp(PasswordInput("Mot de passe"));
 }
 
 class PasswordInput extends StatefulWidget {
+  String label;
+
+  PasswordInput(this.label);
+
   @override
   State<PasswordInput> createState() => _PasswordInputState();
 }
@@ -29,7 +33,7 @@ class _PasswordInputState extends State<PasswordInput> {
               children: [
                 TextField(
                   obscureText: !_isVisible,
-                  decoration: InputDecoration(labelText: "Mot de passe"),
+                  decoration: InputDecoration(labelText: widget.label),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
