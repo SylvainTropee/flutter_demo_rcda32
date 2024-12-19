@@ -7,14 +7,21 @@ void main(){
   runApp(DemoRouting());
 }
 
+//externaliser les routes
+class Routes {
+  static Map<String, WidgetBuilder> getRoutes(BuildContext context){
+    return {
+      "/page-1": (context) => PageOne(),
+      "/page-2": (context) => PageTwo(),
+    };
+  }
+}
+
 class DemoRouting extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      routes: {
-        "/page-1": (context) => PageOne(),
-        "/page-2": (context) => PageTwo(),
-      },
+      routes: Routes.getRoutes(context),
       initialRoute: '/page-1',
     );
   }

@@ -6,6 +6,7 @@ class PageTwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    //récupération des paramètres
     int num = ModalRoute.of(context)!.settings.arguments as int;
 
     return Scaffold(
